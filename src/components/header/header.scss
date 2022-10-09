@@ -1,0 +1,32 @@
+@import '../../style/variables.scss';
+
+.header {
+    height: 70px;
+    padding-top: 30px;
+    img {
+        display: block;
+    }
+    &__nav{
+        margin-left: 35px;
+        transform: translateY(-22px);
+    }
+    &__list {
+        max-width: 335px;
+        display: flex;
+        justify-content: space-between;
+        a {
+            display: block;
+            text-decoration: none;
+            font-family: 'Merienda';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            color: $dark;
+        }
+        li {
+            list-style-type: none;
+        }
+    }
+    
+}
