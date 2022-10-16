@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -15,6 +16,7 @@ body {
 
 .app {
   margin: 0 auto;
+  
 }
 
 .container {
@@ -22,5 +24,18 @@ body {
   max-width: 1440px;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 58px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+}
+
 @import '../components/header/header.scss';
 @import '../components/footer/footer.scss';
+@import '../components/hero/hero.scss';

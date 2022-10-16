@@ -1,8 +1,10 @@
 @import '../../style/variables.scss';
 
 .header {
-    height: 70px;
-    padding-top: 30px;
+    position: relative;
+    padding-top: 20px;
+    z-index: 2;
+    
     img {
         display: block;
     }
@@ -22,7 +24,7 @@
             font-weight: 400;
             font-size: 12px;
             line-height: 17px;
-            color: $dark;
+            color: $light;
         }
         li {
             list-style-type: none;

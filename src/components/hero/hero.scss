@@ -1,0 +1,70 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+.hero {
+    min-height: 640px;
+    background: url('../../resourses/img/Hero_bg.jpg')  center center/cover no-repeat;
+    transform: translateY(-80px);
+    z-index: 1;
+    &__text {
+        max-width: 670px;
+        margin: 0 auto;
+        padding-top: 181px;
+    }
+    &__title {
+        color: $light;
+        margin-bottom: 20px;
+    }
+    &__divider {
+       position: relative;
+       width: 100%;
+       margin-bottom: 35px;
+       img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+       }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 1px;
+        background-color: $light;
+        transform: translateY(15px);
+        margin-right: 25px;
+      }
+    }
+    &__subtitle {
+        color: $light;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__btn {
+        position: absolute;
+        display: block;
+        width: 120px;
+        height: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: none; 
+        background-color: transparent;
+        border: $light 1px solid;
+        border-radius: 5px;
+        transition: 1s ease-out;
+        cursor: pointer;
+        &:hover {
+            background-color: $light
+        } 
+        a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            color: $light;
+            transition: 1s;
+            &:hover {
+                color: $dark;
+            }
+        }  
+    }
+}
