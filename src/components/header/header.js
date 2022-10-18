@@ -4,7 +4,8 @@ const Header = () => {
 
     return (
         <header className='header'>
-           <div className="container">
+            <div className="header__wrapper">
+            <div className="container">
            <img src={logoTwoGrains} className="header__logo" alt='logo'></img>
             <nav className='header__nav'>
                 <ul className='header__list'>
@@ -14,6 +15,7 @@ const Header = () => {
                 </ul>
             </nav>
            </div>
+            </div>
         </header>
     )
 

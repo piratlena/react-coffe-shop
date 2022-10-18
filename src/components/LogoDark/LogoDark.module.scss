@@ -1,0 +1,41 @@
+@import '../../style/variables.scss';
+.divider {
+    width: 180px;
+    margin: 0 auto;
+    &__box-dark {
+        position: relative;
+        width: 180px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        align-items: center;
+        overflow: hidden;
+        img {
+            display: block;
+            margin: 0 auto;
+           }
+          &:before {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 1px;
+            background-color: $dark;
+            top: 50%;
+	        left: 0;
+          
+           }
+          &:after {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 1px;
+            background-color: $dark;
+            top: 50%;
+	        right: 0;
+            
+            
+           }
+    }
+}

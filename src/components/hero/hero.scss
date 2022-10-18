@@ -4,8 +4,6 @@
 .hero {
     min-height: 640px;
     background: url('../../resourses/img/Hero_bg.jpg')  center center/cover no-repeat;
-    transform: translateY(-80px);
-    z-index: 1;
     &__text {
         max-width: 670px;
         margin: 0 auto;
@@ -15,29 +13,13 @@
         color: $light;
         margin-bottom: 20px;
     }
-    &__divider {
-       position: relative;
-       width: 100%;
-       margin-bottom: 35px;
-       img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto
-       }
-      &:before {
-        content: '';
-        position: absolute;
-        width: 60px;
-        height: 1px;
-        background-color: $light;
-        transform: translateY(15px);
-        margin-right: 25px;
-      }
-    }
+ 
     &__subtitle {
         color: $light;
         text-align: center;
+        padding-top: 40px;
         margin-bottom: 20px;
+       
     }
     &__btn {
         position: absolute;

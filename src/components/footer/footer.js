@@ -1,4 +1,5 @@
 import './footer.scss';
+import LogoDark from '../LogoDark/LogoDark';
 import logoTwoGrains from '../../resourses/img/logo_two-grains.svg'
 import logoThreeGrainsDark from '../../resourses/img/logo_three-grains-dark.svg'
 
@@ -16,9 +17,7 @@ const Footer = () => {
                     <li className='footer__list-item'><a href="#" className='footer__link'>For your pleasure</a></li>
                 </ul>
             </nav>
-            <div className="footer__block-second">
-                <img src={logoThreeGrainsDark} className="footer__logo-dark" alt="logo" />
-            </div>
+            <LogoDark/>
             </div>
             
           </div>
