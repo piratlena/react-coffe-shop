@@ -4,7 +4,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #776f4d;
+  background-color: $light;
 }
 
 * {
@@ -35,6 +35,9 @@ h2 {
   font-size: 24px;
   line-height: 35px;
 }
+a {
+  text-decoration: none;
+}
 
 @import '../components/header/header.scss';
 @import '../components/footer/footer.scss';
@@ -44,3 +47,5 @@ h2 {
 @import '../components/AboutUs/AboutUs.module.scss';
 @import '../components/OurBest/OurBest.scss';
 @import '../components/Cards/Cards.scss';
+@import '../components/Promo/Promo.scss';
+@import '../components/AboutIt/AboutIt.scss';

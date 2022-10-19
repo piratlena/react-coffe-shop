@@ -1,0 +1,15 @@
+@import '../../style/variables.scss';
+.promo {
+    min-height: 260px;
+    background: url('../../resourses/img/promo_bg.jpg')  center center/cover no-repeat;
+    &__text {
+        max-width: 670px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 181px;
+    }
+    &__title {
+        color: $light;
+        margin-bottom: 20px;
+    }
+}
