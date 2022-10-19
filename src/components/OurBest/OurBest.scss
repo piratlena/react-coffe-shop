@@ -1,8 +1,8 @@
 @import '../../style/variables.scss';
 
-.best {
+.cards {
     min-height: 495px;
-    background: url('../../resourses/img/best_bg.jpg');
+    background: url('../../resourses/img/best_bg.jpg') center center/cover no-repeat;
     padding: 80px 0px 110px 0px;
     
     &__title {
@@ -13,32 +13,52 @@
         text-align: center;
         margin-bottom: 40px;
     }
-    &__cards {
+    &__block {
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
         display: flex;
+        justify-content: space-between;
         
     }
-    &__card {
-        display: flex;
-        flex-direction: column;
-        column-gap: 3rem;
-        align-items: flex-end;
-        width: 220px;
-        height: 240px;
-        padding: 22px 35px 20px 34px;
+    .card {
+        &__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 220px;
+            height: 240px;
+            padding: 20px 20px 20px 20px;
+            background: url('../../resourses/img/bg_for_card.png');
+            border-radius: 5%;
+            transition: 1s;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+         &__img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 150px;
+            height: 115px;
+            object-fit: contain;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
         &__descr {
             font-weight: 400;
             font-size: 14px;
-            line-height: 20px;
-            text-align: center;
+            margin-right: 0;
         }
         &__price {
             font-weight: 700;
             font-size: 14px;
-            line-height: 20px;
-            text-align: center;
+            text-align: end;
         }
+   
     }
 }

@@ -8,16 +8,20 @@ import Hero from '../components/Hero/Hero';
 import Home from '../pages/Home';
 import AboutUs from '../components/AboutUs/AboutUs';
 import OurBest from '../components/OurBest/OurBest';
+import Layout from '../components/Layout';
+import OurCoffe from '../pages/OurCoffe';
 
 
 function App() {
   return (
     <div className="app">
       <Header/>
-      <Hero/>
-      <AboutUs/>
-      <OurBest/>
-      <Home/>
+
+      <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/our-coffe' element={<OurCoffe/>}/>
+      </Routes>
+
       <Footer/>
     </div>
     

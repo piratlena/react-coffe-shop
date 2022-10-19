@@ -4,7 +4,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e7f6ff;
+  background-color: #776f4d;
 }
 
 * {
@@ -43,3 +43,4 @@ h2 {
 @import '../components/LogoLight/LogoLight.module.scss';
 @import '../components/AboutUs/AboutUs.module.scss';
 @import '../components/OurBest/OurBest.scss';
+@import '../components/Cards/Cards.scss';
