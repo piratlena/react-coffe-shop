@@ -1,10 +1,11 @@
 import './Cards.scss';
-import CardFirst from '../../resourses/img/card_1.png'
-const Card = () => {
-    <div className="card__item">
-        <img src={CardFirst} alt="card" className="card__img" />
-        <div className="card__descr">Solimo Coffee Beans 2 kg</div>
-        <div className="card__price">10.73$</div>
+const Card = (props) => {
+   return (
+    <div className="product__item">
+        <img src={props.imageUrl} alt="product" className="product__img" />
+        <div className="product__descr">{props.title}</div>
+        <div className="product__price">{props.price}$</div>
     </div>
+   )
 }
 export default Card;

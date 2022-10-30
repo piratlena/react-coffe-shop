@@ -1,0 +1,79 @@
+@import '../../style/variables.scss';
+.sort {
+    margin: 0 auto;
+    max-width: 720px;
+    display: flex;
+    justify-content: space-between;
+    &__input{
+        max-width: 290px;
+        display: flex;
+        justify-content: space-between;
+        &-name {
+            margin-right: 20px;
+        }
+        &-search {
+            text-align: center;
+            max-width: 180px;
+            height: 30px;
+            border-radius: 5px;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            border: none;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.5);
+            &:focus {
+                border: none;
+            }
+        }
+    }
+    &__filter {
+        display: flex;
+        justify-content: space-between;
+        &-text {
+            margin-right: 20px;
+        }
+        &-categories {
+            ul {
+                display: flex;
+                li {
+                    width: 75px;
+                    height: 30px;
+                    padding: 7px 0px 5px 0px;
+                    border-radius: 5px;
+                    background: #FFFFFF;
+                    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+                    margin-right: 10px;
+                    list-style-type: none;
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: 12px;
+                    cursor: pointer;
+                    transition: background-color 0.1s ease-in-out;
+              
+                    &:hover {
+                      background-color: darken(#f9f9f9, 2%);
+                    }
+              
+                    &:active {
+                      background-color: darken(#f9f9f9, 5%);
+                    }
+              
+                    &.active {
+                      background-color: #282828;
+                      color: #fff;
+                    }
+                  }
+            }
+        }
+    }
+ 
+}
+.results {
+    margin: 0px auto;
+    width: 1000px;
+    min-height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 62px;
+}
