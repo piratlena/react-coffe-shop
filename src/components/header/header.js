@@ -25,7 +25,8 @@ const Header = () => {
 
             <ul className="header__cart">
              <li className="header__cart-box">
-              <img src={Cart} alt="cart" /></li>
+             <img src={Cart} alt="user_icon" />
+             </li>
               <li>1205 руб.</li>
               <li><img src={Like} alt="user_icon" /></li>
             <li><img src={User} alt="user_icon" /></li>

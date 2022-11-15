@@ -1,19 +1,36 @@
 import './SortBlock.module.scss';
+import React from "react";
+import { FilterContext } from '../../app/App';
 import Card from '../Cards/Cards';
+import Categories from '../Categories/Categories';
+import Skeleton from '../Skeleton/Skeleton';
 
-const SortBlock = ({value, onChangeCategory}) => {
-    const categories = ['Brazil', 'Kenya', 'Columbia']
+const SortBlock = () => {
+       const [items, setItems] = React.useState([]);
+       const [isLoading, setIsLoading] = React.useState(true);
+       const {searchValue} = React.useContext(FilterContext);
+       const [categoryId, setCategoryId] = React.useState(0);
+      
 
-    const arr = [
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 1299},
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 1199},
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 8499},
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 8999},
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 1299},
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 1199},
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 8499},
-        {imageUrl: 'img/cards/card.jpg', title: 'AROMISTICO Coffee 1 kg', origin: 'Цена', price: 8999}
-       ]
+       React.useEffect(() => {
+        setIsLoading(true)
+        fetch(`http://localhost:3000/products?_limit=8&category=${categoryId}`)
+        .then((res) => res.json())
+        
+        .then((arr) => {
+            setItems(arr);
+            setIsLoading(false)
+       })
+    }, [searchValue, categoryId])
+
+    const coffe =  items.map((obj) => <Card key={obj.id} {...obj}/>);
+
+    const onChangeCategory = (id) => {
+        console.log(id)
+        setCategoryId(id);
+      }
+    
+       
     return (
         <div className='container'>
             <div className='sort'>
@@ -28,28 +45,16 @@ const SortBlock = ({value, onChangeCategory}) => {
                 </div>
                 <div className="sort__filter">
                     <div className="sort__filter-text">Or filter</div>
-                    <div className="sort__filter-categories">
-                        <ul>
-                        {categories.map((categoryName, i) => (
-                        <li key={i} 
-                        onClick={() => onChangeCategory(i)} 
-                        className={value===i ? 'active' : ''}>
-                        {categoryName}</li>
-        ))}
-                        </ul>
-                    </div>
+                <Categories value={categoryId} onChangeCategory={onChangeCategory}/>
                 </div>
             </div>
             <div className="results">
                 {
-                    arr.map((obj) => (
-                        <Card
-                        imageUrl={obj.imageUrl}
-                        title={obj.title}
-                        price={obj.price}/>
-                    ))
+                    isLoading ? [...new Array(8)].map((_, index) => <Skeleton key={index}/>) :
+                  coffe
                 }
             </div>
+            <span>More</span>
         </div>
     )
 }

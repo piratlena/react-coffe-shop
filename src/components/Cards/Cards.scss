@@ -7,7 +7,7 @@
         justify-content: space-between;
         width: 220px;
         height: 260px;
-        padding: 20px 20px 20px 20px;
+        padding: 20px 23px 20px 23px;
         background: $light;
         border: 1px solid #F3F3F3;
         border-radius: 5%;
@@ -34,7 +34,12 @@
     &__descr {
         font-weight: 400;
         font-size: 14px;
-        margin-right: 0;
+        text-align: end;
+    }
+    &__origin {
+        font-weight: 400;
+        font-size: 14px;
+        text-align: end;
     }
     &__price {
         font-weight: 700;
