@@ -14,11 +14,28 @@ import OurCoffe from '../pages/OurCoffe';
 export const FilterContext = React.createContext();
 
 function App() {
-  const [searchValue, setSearchValue] = React.useState('')
+  const [searchValue, setSearchValue] = React.useState('');
+  const [categoryId, setCategoryId] = React.useState(0);
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const [items, setItems] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  const value = {
+    searchValue,
+    setSearchValue,
+    categoryId,
+    setCategoryId,
+    currentPage,
+    setCurrentPage,
+    items,
+    setItems,
+    isLoading,
+    setIsLoading
+  }
   return (
     <div className="app">
 
-      <FilterContext.Provider value={{searchValue, setSearchValue}}>
+      <FilterContext.Provider value={value}>
       <Header/>
 
           <Routes>

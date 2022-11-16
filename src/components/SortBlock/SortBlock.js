@@ -4,24 +4,37 @@ import { FilterContext } from '../../app/App';
 import Card from '../Cards/Cards';
 import Categories from '../Categories/Categories';
 import Skeleton from '../Skeleton/Skeleton';
-
+import { Pagination } from '../Pagination/Pagination';
 const SortBlock = () => {
-       const [items, setItems] = React.useState([]);
-       const [isLoading, setIsLoading] = React.useState(true);
-       const {searchValue} = React.useContext(FilterContext);
-       const [categoryId, setCategoryId] = React.useState(0);
+       
+    const {searchValue,
+            setSearchValue,
+            categoryId,
+            setCategoryId,
+            currentPage,
+            setCurrentPage,
+            items,
+            setItems,
+            isLoading,
+            setIsLoading} = React.useContext(FilterContext);
+       
       
-
+       const delay = () => {
+        return new Promise(resolve => setTimeout(resolve, 800))
+       }
        React.useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:3000/products?_limit=8&category=${categoryId}`)
+        fetch(`http://localhost:3000/products?_limit=8&category=${categoryId}&page=${currentPage}`)
         .then((res) => res.json())
-        
+        .then(async data => {
+            await delay()
+            return data
+        })
         .then((arr) => {
             setItems(arr);
             setIsLoading(false)
        })
-    }, [searchValue, categoryId])
+    }, [searchValue, categoryId, currentPage])
 
     const coffe =  items.map((obj) => <Card key={obj.id} {...obj}/>);
 
@@ -54,7 +67,8 @@ const SortBlock = () => {
                   coffe
                 }
             </div>
-            <span>More</span>
+            <Pagination
+            onChangePage={number => setCurrentPage(number)}/>
         </div>
     )
 }
